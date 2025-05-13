@@ -7,4 +7,7 @@
 // x, y: 老鼠當前座標
 void animate_step(Maze *m, int x, int y);
 
+// 設定每幀延遲（單位：毫秒）
+void set_frame_delay_ms(int ms);
+
 #endif

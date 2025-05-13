@@ -2,8 +2,15 @@
 #include <stdio.h>
 #include <unistd.h> // usleep
 
-// 每幀延遲（微秒）
-#define FRAME_DELAY_US 25000
+// 動態幀延遲（microseconds），預設 500 ms
+static int frame_delay_us = 500 * 1000;
+
+// 外部可呼叫此函式，以 ms 為單位設定延遲
+void set_frame_delay_ms(int ms)
+{
+    if (ms > 0)
+        frame_delay_us = ms * 1000;
+}
 
 // 清除螢幕並將游標移到左上角
 static void clear_screen(void)
@@ -56,5 +63,5 @@ void animate_step(Maze *m, int x, int y)
     prev_y = y;
 
     // 4. 延遲
-    usleep(FRAME_DELAY_US);
+    usleep(frame_delay_us);
 }

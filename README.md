@@ -15,5 +15,5 @@ $ ./.build/maze_gen [-f file_name] [width height]
 走迷宮：
 
 ```bash
-$ ./.build/maze_solver <maze_file> <algorithm>
+$ ./.build/maze_solver <maze_file> <algorithm> [frame_delay_ms]
 ```
