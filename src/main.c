@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     // Usage 可接受可選的 frame-delay-ms
     if (argc < 3 || argc > 4)
     {
-        fprintf(stderr, "Usage: %s <maze_file> <algorithm> [frame_delay_ms]\\n", argv[0]);
+        fprintf(stderr, "Usage: %s <maze_file> <algorithm> [frame_delay_ms]\n", argv[0]);
         return EXIT_FAILURE;
     }
     const char *maze_path = argv[1];
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
         int delay_ms = atoi(argv[3]);
         if (delay_ms <= 0)
         {
-            fprintf(stderr, "Error: invalid frame_delay_ms '%s'\\n", argv[3]);
+            fprintf(stderr, "Error: invalid frame_delay_ms '%s'\n", argv[3]);
             return EXIT_FAILURE;
         }
         set_frame_delay_ms(delay_ms);
